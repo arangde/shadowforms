@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html ng-app="Fineform">
+	<head>
+		<!--<base href="/fineform-admin/">-->
+		<title>ShadowForms | Admin Panel</title>
+
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		
+		<meta name="application-name" content="Fineform"/>
+		<meta name="msapplication-TileColor" content="#FFFFFF" />
+
+		<link type="text/css" rel="stylesheet" href="assets/css/bootstrap.min.css" />
+		<link type="text/css" rel="stylesheet" href="assets/css/styles.css" />
+		<link type="text/css" rel="stylesheet" href="assets/css/bootstrap-table.css" />
+		<link type="text/css" rel="stylesheet" href="assets/css/ajax-loader.css" />
+		<link type="text/css" rel="stylesheet" href="assets/css/ui-sortable.css" />
+
+		<script type="application/javascript" src="assets/js/lumino.glyphs.js"></script>
+		<!--[if lt IE 9]>
+			<script type="application/javascript" src="assets/js/html5shiv.js"></script>
+			<script type="application/javascript" src="assets/js/respond.min.js"></script>
+		<![endif]-->
+		<script type="application/javascript" src="assets/js/jquery.min.js"></script>
+		<script type="application/javascript" src="assets/js/jquery-ui.min.js"></script>
+		<script type="application/javascript" src="assets/js/jwt.min.js"></script>
+		
+		<!-- AngularJS library -->
+		<script type="application/javascript" src="libs/angular/angular.min.js"></script>
+		<script type="application/javascript" src="libs/angular/angular-animate.js"></script>
+		<script type="application/javascript" src="libs/angular/angular-route.min.js"></script>
+		<script type="application/javascript" src="libs/angular/angular-resource.min.js"></script>
+		
+		<!-- BootstrapUI library -->
+		<script type="application/javascript" src="assets/js/ui-bootstrap.min.js"></script>
+
+		<!-- PDFJS library -->
+		<script type="application/javascript" src="libs/pdfjs/build/pdf.js"></script>
+		<script type="application/javascript" src="libs/pdfjs/build/pdf.worker.js"></script>
+		<script type="application/javascript" src="libs/fabricjs/fabric.js"></script>
+		
+		<!-- App module definition -->
+		<script type="application/javascript" src="modules/app.js"></script>
+
+		<!-- Constants to be used throughout the app -->
+		<script type="application/javascript" src="modules/constants/common.js"></script>
+
+		<!-- Controller to be used by this view -->
+		<script type="application/javascript" src="modules/controllers/mainController.js"></script>
+		<script type="application/javascript" src="modules/controllers/errorController.js"></script>
+		<script type="application/javascript" src="modules/controllers/loginController.js"></script>
+		<script type="application/javascript" src="modules/controllers/accountsController.js"></script>
+		<script type="application/javascript" src="modules/controllers/documentsController.js"></script>
+		<script type="application/javascript" src="modules/controllers/accessDeniedAlertController.js"></script>
+
+		<!-- Services to be used throughout the app -->
+		<script type="application/javascript" src="modules/services/jwtService.js"></script>
+		<script type="application/javascript" src="modules/services/restService.js"></script>
+		<script type="application/javascript" src="modules/services/storageService.js"></script>
+		<script type="application/javascript" src="modules/services/accessDeniedAlertService.js"></script>
+
+		<!-- Factories to be used throughout the app -->
+		<script type="application/javascript" src="modules/factories/permissionFactory.js"></script>
+
+		<!-- Providers to be used throughout the app -->
+		<script type="application/javascript" src="modules/providers/authProvider.js"></script>
+
+		<!-- Directive to be used throughout the app -->
+		<script type="application/javascript" src="modules/directives/hasPermission.js"></script>
+		<script type="application/javascript" src="modules/directives/headerDirective.js"></script>
+		<script type="application/javascript" src="modules/directives/menuDirective.js"></script>
+		<script type="application/javascript" src="modules/directives/messageDirective.js"></script>
+		<script type="application/javascript" src="modules/directives/paginationDirective.js"></script>
+		<script type="application/javascript" src="modules/directives/activityIndicatorDirective.js"></script>
+		<script type="application/javascript" src="modules/directives/pdfDirective.js"></script>
+
+		<!-- Configuration to be used throughout the app -->
+		<script type="application/javascript" src="modules/config/appConfig.js"></script>
+	</head>
+	<body ng-controller="mainController">
+		<div ng-view></div>
+		<activity-indicator-directive></activity-indicator-directive>
+		<script type="application/javascript" src="assets/js/ui-sortable.js"></script>
+		<script type="application/javascript" src="assets/js/bootstrap.min.js"></script>
+		<script type="application/javascript" src="assets/js/bootstrap-table.js"></script>
+		<script type="application/javascript">
+			$(window).on('resize', function () {
+				if ($(window).width() > 768) $('#sidebar-collapse').collapse('show')
+			});
+			$(window).on('resize', function () {
+				if ($(window).width() <= 767) $('#sidebar-collapse').collapse('hide')
+			});
+		</script>
+	</body>
+</html>
